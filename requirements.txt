@@ -1,0 +1,9 @@
+pymongo
+Flask
+dotenv
+os
+hashlib
+uuid
+regex
+datetime
+time
