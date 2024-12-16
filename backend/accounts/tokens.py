@@ -1,11 +1,8 @@
 import time
-from datetime import timedelta
 from uuid import uuid4
 from pymongo import MongoClient
-import dotenv
+from dotenv import load_dotenv
 from os import getenv
-
-dotenv.load_dotenv()
 
 # Authentication Token Document
 #
@@ -15,35 +12,42 @@ dotenv.load_dotenv()
 #   expiry: unix-time,
 # }
 
-def generate_expiry():
-    current_time = time.gmtime(time.time())
-    expiry = time.mktime(current_time) + (14 * 86400)
-    
-    return(expiry)
-
-def clear_id(database, id):
+def clear_token(database, token):
     tokens = database["Tokens"]
-    id = str(id)
+    token = str(token)
 
-    while len(list(tokens.find({"token":id}))) != 0:
-        print("WARNING WARNING: Requested ID is found | IDS LIKELY RUNNING OUT")
-        id = uuid4()
+    while len(list(tokens.find({"token":token}))) != 0:
+        print("WARNING WARNING: Requested Token is found | TOKENS LIKELY RUNNING OUT")
+        token = uuid4()
 
-    return str(id)
+    return str(token)
 
 def issue_token(database, id):
-    token = clear_id(database, uuid4())
+    token = clear_token(database, uuid4())
 
     database["Tokens"].insert_one( {
         "token": token,
         "id": id,
-        "expiry": str(generate_expiry())
+        "expiry": str(time.time() + (86400 * 14))
     })
 
     return token
 
-def authorize_token(database, token):
+def authorize_token(database, token, id):
     tokens = database["Tokens"]
-    data_search = tokens.find({"token": token})
+    query = tokens.find_one({"token": token})
 
-    pass
+    if not query:
+        return 404
+    
+    if float(query["expiry"]) <= time.time():
+        tokens.delete_one({"token": token})
+        return 401
+    
+    if query["id"] != id:
+        return 403
+
+    return 200
+
+if __name__ == "__main__":
+    load_dotenv()

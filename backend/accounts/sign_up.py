@@ -3,9 +3,8 @@ from pymongo import MongoClient
 from os import getenv
 from dotenv import load_dotenv
 from hashlib import sha512
-from clearer import clear_email, clear_username
-
-load_dotenv()
+from .clearer import clear_email, clear_username
+from .tokens import issue_token
 
 # User Document
 #
@@ -28,7 +27,6 @@ def clear_id(database, id):
     return str(id)
 
 def signup(database, data):
-    data = {datapiece: str(data[datapiece]) for datapiece in data}
     data["password"] = data["password"].encode('utf-8')
 
     cleared_id = clear_id(database, uuid4())
@@ -36,10 +34,10 @@ def signup(database, data):
     cleared_email = clear_email(data["email"])
 
     if cleared_email != 200:
-        return clear_email
+        return cleared_email
 
     if cleared_username != 200:
-        return clear_username
+        return cleared_username
     
     salt = uuid4().hex
 
@@ -54,6 +52,11 @@ def signup(database, data):
     try:
         database["Users"].insert_one(user_document)
     except:
-        return 400, "Failed"
+        return 500, "Failed to create account"
     
-    return 200
+    issued_token = issue_token(database, cleared_id)
+
+    return {"token": issued_token}, 200
+
+if __name__ == "__main__":
+    load_dotenv()
