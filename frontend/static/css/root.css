@@ -27,6 +27,14 @@ h2 {
     text-align: left;
 }
 
+p {
+    font-family: Lexend, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    text-align: left;
+}
+
 body {
     line-height: 1.6;
     background-image: rgb(97, 97, 97); /* linear-gradient(rgb(48, 47, 47), rgb(97, 97, 97)); */
