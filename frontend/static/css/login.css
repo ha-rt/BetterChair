@@ -1,3 +1,6 @@
+/* As with many of the other css pages, theres probably a lot of redundancies here to be removed.
+Ill try and handle it once all the main pages are done */
+
 main {
     background-color:  #333;
     z-index: 1;
@@ -30,9 +33,16 @@ input {
 form {
     margin-top: 150px;
     margin-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
 }
 
-/* Classes to put space between the texts and form, there definetly is a better way to do this. */
+.submitbutton {
+    width: 200px;
+}
+
+/* Classes to put space between the texts and form, there might be a better way to do this. */
 
 .spacer1 {
     margin-bottom: 15px;

@@ -18,6 +18,8 @@ header a {
     align-items: center;
 }
 
+/* These look redundant, but i havent found a way to condense them without breaking something. */
+
 nav {
     margin-left: auto;
     

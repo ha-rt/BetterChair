@@ -1,3 +1,6 @@
+/* Probably the most cluttered page, need to adjust these values and reduce some stuff to make
+it a bit nicer to see on the page and edit */
+
 body {
     font-family: Lexend, sans-serif;
     line-height: 1.6;
@@ -52,6 +55,8 @@ h2 {
 #primary-gradient {
     background-image: linear-gradient(rgb(48, 47, 47), rgb(97, 97, 97));
 }
+
+/* This feels very unecessary for a button, especially when it doesnt even look that great. On the to do list */ 
 
 .getstarted {
     background-color: #1d1d1d;
