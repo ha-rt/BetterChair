@@ -25,17 +25,18 @@ nav {
     
 }
 
-nav ul {
+.navul {
     display: flex;
     list-style: none;
+    list-style-type: none;
 }
 
-nav ul li {
+.navli {
     margin-right: 20px;
     font-size: 25px;
 }
 
-nav ul li a {
+.nava {
     color: #fff;
     text-decoration: none;
 }

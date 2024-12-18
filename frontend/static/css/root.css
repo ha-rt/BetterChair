@@ -21,7 +21,15 @@ h1 {
 
 h2 {
     font-family: Lexend, sans-serif;
-    font-size: 2.5rem;
+    font-size: 40px;
+    font-weight: 350;
+    color: #fff;
+    text-align: left;
+}
+
+h3 {
+    font-family: Lexend, sans-serif;
+    font-size: 30px;
     font-weight: 350;
     color: #fff;
     text-align: left;
