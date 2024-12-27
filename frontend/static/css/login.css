@@ -55,3 +55,7 @@ form {
 .loginlink {
     color: #ffffff;
 }
+
+#alert {
+    color: red;
+}
