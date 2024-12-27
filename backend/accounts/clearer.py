@@ -1,4 +1,4 @@
-from re import compile
+from re import compile, escape
 from os import path
 
 username_regex = compile(r"[^a-zA-Z0-9_]")
@@ -13,7 +13,7 @@ def clear_email(email):
 
 def clear_username(database, username):
     users = database["Users"]
-    found_users = users.find_one({"username":username})
+    found_users = users.find_one({"username": {"$regex": f"^{escape(username)}$", "$options": "i"}})
 
     if found_users:
         return {"error": "Username in use"}, 409
