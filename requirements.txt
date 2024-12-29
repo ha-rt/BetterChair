@@ -7,3 +7,5 @@ uuid
 regex
 datetime
 time
+smtplib
+email
