@@ -89,7 +89,7 @@ def signup(database, data):
     try:
         database["Users"].insert_one(user_document)
     except:
-        return 500, "Failed to create account"
+        return {"error": "Failed to create the account"}, 500
     
     global email_server_loaded
 
