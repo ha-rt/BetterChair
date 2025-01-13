@@ -1,0 +1,66 @@
+main {
+    background-color: #333;
+    z-index: 1;
+    width: 100vw;
+    height: 90vh;;
+    padding: 0.5% 1.5% 0% 1.5%;
+    display: flex;
+}
+
+h1 {
+    font-family: Lexend, sans-serif;
+    font-size: 70px;
+    font-weight: 700;
+    color: #000;
+    text-align: left;
+}
+
+p  {
+    font-family: Lexend, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #000;
+    text-align: left;
+}
+
+.committees {
+    z-index: 1;
+    background-color: #fff;
+    border: 3px solid #000;
+    padding: 30px;
+    width: 70vw;
+    height: 80vh;
+    margin: 4vh 1vw;
+    overflow: auto;
+}
+
+.sidebar {
+    z-index: 1;
+    background-color: #333;
+    width: 20vw;
+    height: 80vh;
+    margin: 4vh 0vw 4vh 3vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.createcommittee {
+    z-index: 2;
+    background-color: #fff;
+    border: 3px solid #000;
+    padding: 2.5vh 2vw;
+    width: 20vw;
+    height: 10vh;
+}
+
+.shlong {
+    z-index: 2;
+    background-color: #fff;
+    border: 3px solid #000;
+    margin-top: 5vh;
+    padding: 2.5vh 2vw;
+    width: 20vw;
+    height: 65vh;
+    overflow: auto;
+}
