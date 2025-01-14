@@ -15,6 +15,12 @@
 
     </header>
     <main>
+    <div id="modalcreate" class="createmodal">
+      <div class="createmodalcontent">
+          <span class="close">&times;</span>
+          <p>Some text in the Modal..</p>
+      </div>
+    </div>
     <div class="committees">
         <h1>Your Committees</h1>
         <div class="committeeboxholder">
@@ -23,11 +29,10 @@
           <div class="committeebox"></div>
           <div class="committeebox"></div>
           <div class="committeebox"></div>
-          
         </div>
     </div>
     <div class="sidebar">
-      <a class="createcommittee" href="index.html">Create Committee</a>
+      <button class="createcommittee" id="triggercreate">Create Committee</button>
       <ul class="countrybox">
         <h2>Countries</h2>
         <li><p>Canada</p</li>
@@ -52,4 +57,5 @@
     </div>
     </main>
   </body>
+  <script src="static/js/app.js"></script>
 </html>
