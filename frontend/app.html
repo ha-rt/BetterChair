@@ -12,50 +12,46 @@
       <a href="index.html">
       <img src="static/media/bettermunlogo.png" alt="BetterMUN Logo">
       </a>
-
     </header>
     <main>
     <div id="modalcreate" class="createmodal">
       <div class="createmodalcontent">
-          <span class="close">&times;</span>
-          <p>Some text in the Modal..</p>
+        <span class="close">&times;</span>
+        <form id="createCommitteeForm">
+          <h2>Create Committee</h2>
+          <label for="committeename">Committee Name</label><br>
+          <input type="text" id="committeename" name="Committee Name"><br>
+          <label for="country">Country</label><br>
+          <input type="text" id="country" name="Country">
+          <button type="button" onclick="addCountry()">Add Country</button><br>
+          <ul id="countryList" class="grid-list"></ul>
+          <label for="authusers">Authorised users (Username)</label><br>
+          <input type="text" id="authusers" name="Authorised Users">
+          <button type="button" onclick="addUser()">Add User</button><br>
+          <ul id="userList" class="grid-list"></ul>
+          <input type="submit" value="Create">
+        </form>
       </div>
     </div>
     <div class="committees">
         <h1>Your Committees</h1>
-        <div class="committeeboxholder">
-          <div class="committeebox"></div>
-          <div class="committeebox"></div>
-          <div class="committeebox"></div>
-          <div class="committeebox"></div>
-          <div class="committeebox"></div>
+        <div class="committeeboxholder" id="committeeboxholder">
         </div>
     </div>
     <div class="sidebar">
       <button class="createcommittee" id="triggercreate">Create Committee</button>
       <ul class="countrybox">
         <h2>Countries</h2>
-        <li><p>Canada</p</li>
-        <li><p>USA</p</li>
-        <li><p>India</p</li>
-        <li><p>Russia</p</li>
-        <li><p>Mexico</p</li>
-        <li><p>China</p</li>
-        <li><p>Japan</p</li>
-        <li><p>Germany</p</li>
-        <li><p>France</p</li>
-        <li><p>UK</p</li>
-        <li><p>Italy</p</li>
-        <li><p>Spain</p</li>
-        <li><p>South Africa</p</li>
-        <li><p>Australia</p</li>
-        <li><p>Brazil</p</li>
-        <li><p>Argentina</p</li>
-        <li><p>Chile</p</li>
-        <li><p>Peru</p</li>
+        <li><p>Canada</p></li>
+        <li><p>USA</p></li>
+        <li><p>India</p></li>
+        <li><p>Russia</p></li>
+        <li><p>Mexico</p></li>
+        <li><p>China</p></li>
+        <li><p>Japan</p></li>
       </ul>
     </div>
     </main>
+    <script src="static/js/app.js"></script>
   </body>
-  <script src="static/js/app.js"></script>
 </html>
