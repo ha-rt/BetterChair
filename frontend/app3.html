@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BetterMUN</title>
+    <link rel="stylesheet" type="text/css" href="static/css/root.css">
+    <link rel="stylesheet" type="text/css" href="static/css/app3.css">
+    <link rel="stylesheet" type="text/css" href="static/css/header.css">
+    <link rel="stylesheet" type="text/css" href="static/css/footer.css">
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+      <img src="static/media/bettermunlogo.png" alt="BetterMUN Logo">
+      </a>
+    </header>
+    <main>
+      <div class="pspeakers">
+        <h1>Primary Speakers</h1>
+        <div class="pspeakersdisplay-container">
+          <div class="pspeakersdisplay">
+            <h2>Name of Country</h2>
+          </div>
+          <div class="votingdisplay">
+            <a class="timer">0:00/1:00</a>
+            <button class="votingbutton">Start</button>
+            <button class="votingbutton" id="motion">Motion</button>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <button class="nextstep">Next</button>
+        <div class="order">
+        <h3>Next Up</h3>
+        <ul>
+          <li>Country 1</li>
+          <li>Country 2</li>
+          <li>Country 3</li>
+          <li>Country 4</li>
+          <li>Country 5</li>
+        </ul>
+        </div>
+      </div>
+      <div id="motionmodal" class="motionmodal">
+        <div class="motionmodalcontent">
+          <span class="close">&times;</span>
+          <form id="creatmotionform">
+            <h2>Create Motion</h2>
+            <label for="country">Country</label><br>
+            <select id="country" name="Country"><br>
+              <option value="Canada">Canada</option>
+              <option value="USA">USA</option>
+              <option value="China">China</option>
+              <option value="North Korea">North Korea</option>
+            </select><br>
+            <label for="motiontype">Type</label><br>
+            <select id="motiontype" name="Motion Type"><br>
+              <option value="moderated">Moderated</option>
+              <option value="unmoderated">Unmoderated</option>
+              <option value="open">Open</option>
+              <option value="close">Close</option>
+              <option value="suspenddebate">Suspend Debate</option>
+              <option value="roundtable">Roundtable</option>
+              <option value="entervotingprocedure">Enter Voting Procedure</option>
+            </select><br>
+            <label for="motiontime">Time</label><br>
+            <input type="number" id="motiontime" name="Motion Time"><br>
+            <label for="motionspeakingtime">Speaking Time</label><br>
+            <input type="number" id="motionspeakingtime" name="Motion Speaking Time"><br>
+            <input type="submit" value="Create">
+          </form>
+      </div>
+    </main>
+    <script src="static/js/app3.js"></script>
+  </body>
+</html>
