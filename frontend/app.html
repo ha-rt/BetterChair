@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>BetterMUN</title>
+    <title>BetterChair</title>
     <link rel="stylesheet" type="text/css" href="static/css/root.css">
     <link rel="stylesheet" type="text/css" href="static/css/app.css">
     <link rel="stylesheet" type="text/css" href="static/css/header.css">
@@ -10,7 +10,7 @@
   <body>
     <header>
       <a href="index.html">
-      <img src="static/media/bettermunlogo.png" alt="BetterMUN Logo">
+      <img src="static/media/betterchairlogo.png" alt="BetterChair Logo">
       </a>
     </header>
     <main>
@@ -21,6 +21,8 @@
           <h2>Create Committee</h2>
           <label for="committeename">Committee Name</label><br>
           <input type="text" id="committeename" name="Committee Name"><br>
+          <label for="agenda">Agenda</label><br>
+          <input type="text" id="agenda" name="Agenda"><br>
           <label for="country">Country</label><br>
           <input type="text" id="country" name="Country">
           <button type="button" onclick="addCountry()">Add Country</button><br>
@@ -40,16 +42,13 @@
     </div>
     <div class="sidebar">
       <button class="createcommittee" id="triggercreate">Create Committee</button>
-      <ul class="countrybox">
-        <h2>Countries</h2>
-        <li><p>Canada</p></li>
-        <li><p>USA</p></li>
-        <li><p>India</p></li>
-        <li><p>Russia</p></li>
-        <li><p>Mexico</p></li>
-        <li><p>China</p></li>
-        <li><p>Japan</p></li>
-      </ul>
+      <div class="appnavmenu">
+        <a class="appnav" href="app.html">Select Committee</a>
+        <a class="appnav" href="app2.html">Role call</a>
+        <a class="appnav" href="app3.html">Primary Speakers</a>
+        <a class="appnav" href="app4.html">Moderated Debate</a>
+        <a class="appnav" href="app5.html">Unmoderated Topic</a>
+      </div>
     </div>
     </main>
     <script src="static/js/app.js"></script>

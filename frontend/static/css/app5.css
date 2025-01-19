@@ -130,7 +130,7 @@ li {
     z-index: 2;
     background-color: #fff;
     padding: 10px 20px;
-    width: 20vw;
+    width: 100%;
     height: 50vh;
     margin: 1vh 1vw;
     overflow: auto;
@@ -159,7 +159,7 @@ li {
     padding: 5px;
     margin: 10px;
     border: 1px solid #000;
-    width: 15vw;
+    width: 90%;
 }
 
 .motionmodal {

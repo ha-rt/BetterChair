@@ -61,10 +61,12 @@ document.getElementById('createCommitteeForm').addEventListener('submit', functi
 
   const userList = document.getElementById('userList');
   const users = Array.from(userList.children).map(li => li.textContent.replace(' Remove', '')).join(', ');
+
+  const agenda = document.getElementById('agenda').value;
   
   const newCommitteeBox = document.createElement('div');
   newCommitteeBox.className = 'committeebox';
-  newCommitteeBox.innerHTML = `<h3>${committeeName}</h3><p>Countries: ${countries}</p><p>Authorized Users: ${users}</p><input class="enterbutton" type="button" value="Enter">`;
+  newCommitteeBox.innerHTML = `<h3>${committeeName}</h3><p>Countries: ${countries}</p><p>Authorized Users: ${users}</p><p>Agenda: ${agenda}</p><input class="enterbutton" type="button" value="Enter">`;
   
   document.getElementById('committeeboxholder').appendChild(newCommitteeBox);
   
