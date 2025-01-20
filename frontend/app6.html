@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BetterChair</title>
+    <link rel="stylesheet" type="text/css" href="static/css/root.css">
+    <link rel="stylesheet" type="text/css" href="static/css/app6.css">
+    <link rel="stylesheet" type="text/css" href="static/css/header.css">
+    <link rel="stylesheet" type="text/css" href="static/css/footer.css">
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+      <img src="static/media/betterchairlogo.png" alt="BetterChair Logo">
+      </a>
+    </header>
+    <main>
+    <div class="committees">
+        <h1>Your Motions</h1>
+        <div class="committeeboxholder" id="committeeboxholder">
+            <div class="committeebox">
+                <p>Country</p>
+                <p>Motion Type: example</p>
+                <p>Time: x:xx</p>
+                <p>Speaking Time: x:xx</p>
+                <div class="button-container">
+                    <button class="pass-button">Pass</button>
+                    <button class="fail-button">Fail</button>
+                </div>
+            </div>
+            <div class="committeebox">
+                <p>Country</p>
+                <p>Motion Type: example</p>
+                <p>Time: 1:00</p>
+                <p>Speaking Time: 0:30</p>
+                <div class="button-container">
+                    <button class="pass-button">Pass</button>
+                    <button class="fail-button">Fail</button>
+                </div>
+            </div>
+            <div class="committeebox">
+                <p>Country</p>
+                <p>Motion Type: example</p>
+                <p>Time: 1:00</p>
+                <p>Speaking Time: 0:30</p>
+                <div class="button-container">
+                    <button class="pass-button">Pass</button>
+                    <button class="fail-button">Fail</button>
+                </div>
+            </div>
+            <div class="committeebox">
+                <p>Country</p>
+                <p>Motion Type: example</p>
+                <p>Time: 1:00</p>
+                <p>Speaking Time: 0:30</p>
+                <div class="button-container">
+                    <button class="pass-button">Pass</button>
+                    <button class="fail-button">Fail</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+      <button class="createcommittee" id="motion">Create Motion</button>
+      <div class="appnavmenu">
+        <a class="appnav" href="app.html">Select Committee</a>
+        <a class="appnav" href="app2.html">Role call</a>
+        <a class="appnav" href="app3.html">Primary Speakers</a>
+        <a class="appnav" href="app4.html">Moderated Debate</a>
+        <a class="appnav" href="app5.html">Unmoderated Topic</a>
+      </div>
+    </div>
+    <div id="motionmodal" class="motionmodal">
+        <div class="motionmodalcontent">
+          <span class="close">&times;</span>
+          <form id="creatmotionform">
+            <h2>Create Motion</h2>
+            <label for="country">Country</label><br>
+            <select id="country" name="Country"><br>
+              <option value="Canada">Canada</option>
+              <option value="USA">USA</option>
+              <option value="China">China</option>
+              <option value="North Korea">North Korea</option>
+            </select><br>
+            <label for="motiontype">Type</label><br>
+            <select id="motiontype" name="Motion Type"><br>
+              <option value="moderated">Moderated</option>
+              <option value="unmoderated">Unmoderated</option>
+              <option value="open">Open</option>
+              <option value="close">Close</option>
+              <option value="suspenddebate">Suspend Debate</option>
+              <option value="roundtable">Roundtable</option>
+              <option value="entervotingprocedure">Enter Voting Procedure</option>
+            </select><br>
+            <label for="motiontime">Time</label><br>
+            <input type="number" id="motiontime" name="Motion Time"><br>
+            <label for="motionspeakingtime">Speaking Time</label><br>
+            <input type="number" id="motionspeakingtime" name="Motion Speaking Time"><br>
+            <input type="submit" value="Create">
+          </form>
+      </div>
+    </main>
+    <script src="static/js/app6.js"></script>
+  </body>
+</html>
