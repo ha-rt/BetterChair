@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from os import getenv
 from hashlib import sha512
 from .tokens import issue_token
+from re import escape
 
 def compare_passwords(password, salt, db_password):
     encoded_password_hash = (password + salt).encode()
@@ -12,9 +13,21 @@ def compare_passwords(password, salt, db_password):
 
     return True
 
+def get_username_from_id(database, id):
+    users = database["Users"]
+    query = users.find_one({"id": id})
+
+    if not query:
+        return 404
+
+    if not query["username"]:
+        return 404
+
+    return query["username"]
+
 def login(database, username, password):
     users = database["Users"]
-    query = users.find_one({"username": username})
+    query = users.find_one({"username": {"$regex": f"^{escape(username)}$", "$options": "i"}})
 
     if not query:
         return {"error": "No user found"}, 404

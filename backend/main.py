@@ -4,7 +4,7 @@ from flask import Flask, request
 from dotenv import load_dotenv
 from flask_cors import CORS
 
-from accounts import signup, login, issue_password_reset, confirm_password_reset
+from accounts import signup, login, issue_password_reset, confirm_password_reset, get_username_from_id
 from committees import *
 
 load_dotenv()
@@ -122,6 +122,23 @@ def create_committee_route():
 
     try:
         result = create_committee(database, account_token, committee_name, countries, agenda)
+    except Exception as e:
+        return {"error": str(e)}, 500
+
+    return result
+
+@app.route("/api/get_username_from_id", methods=["POST"])
+def get_username_route():
+    information = request.get_json()
+
+    if not information["id"]:
+        return {"error": "Missing Arguments"}, 400
+    
+    if type(information["id"]) != str:
+        return {"error": "Invalid Arguments"}, 400
+    
+    try:
+        result = get_username_from_id(database, id)
     except Exception as e:
         return {"error": str(e)}, 500
 
